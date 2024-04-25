@@ -39,7 +39,5 @@ app.use ('*', (req, res) => {
 const PORT = process.env.PORT || 3030;
 //rum listen
 app.listen (PORT, () => {
-  console.log (
-    `Server Running ${process.env.DEV_MOD} On ${PORT}`.bgGreen.black
-  );
+  console.log (`Server Running On ${PORT}`.bgGreen.black);
 });
