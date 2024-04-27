@@ -29,7 +29,7 @@ useEffect(() => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.put("http://localhost:3030/api/v1/auth/profile", {
+      const { data } = await axios.put("https://ecommerce-app-f61n.onrender.com/api/v1/auth/profile", {
         name,
         email,
         password,
