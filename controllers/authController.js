@@ -55,13 +55,13 @@ export const registerContreller = async (req, res) => {
     console.log (error);
     res.status (500).send ({
       success: false,
-      message: 'error in regidter',
+      message: 'error in register',
       error,
     });
   }
 };
 
-//post login
+//post-login
 export const loginContreller = async (req, res) => {
   try {
     const {email, password} = req.body;
@@ -72,7 +72,7 @@ export const loginContreller = async (req, res) => {
         message: 'invalid email or password',
       });
     }
-    //check user
+    //find-user
     const user = await userModel.findOne ({email});
     if (!user) {
       return res.status (404).send ({
@@ -87,7 +87,7 @@ export const loginContreller = async (req, res) => {
         message: 'invalid password',
       });
     }
-    //token
+    //jwt-token
     const token = await JWT.sign ({_id: user._id}, process.env.JWT_SECRET, {
       expiresIn: '7d',
     });

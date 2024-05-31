@@ -1,5 +1,4 @@
 import mongoose from 'mongoose';
-import Colors from 'colors';
 
 const connectDB = async () => {
   try {

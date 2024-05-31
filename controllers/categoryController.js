@@ -2,7 +2,6 @@ import slugify from 'slugify';
 import categoryModel from '../models/categoryModel.js';
 
 //create category
-
 export const createCategoryController = async (req, res) => {
   try {
     const {name} = req.body;

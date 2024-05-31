@@ -5,18 +5,22 @@ import connectDB from './config/db.js';
 import authRoutes from './routs/authRout.js';
 import categoryRout from './routs/categoryRouts.js';
 import productRoutes from './routs/productRoutes.js';
+import 'colors';
 import cors from 'cors';
 import path from 'path';
 
 //config .env
 dotenv.config ();
 
+//port
+const PORT = process.env.PORT || 3030;
+
 const __dirname = path.resolve ();
 
 //database config
 connectDB ();
 
-//resr object
+//res object
 const app = express ();
 
 //middleware
@@ -35,8 +39,6 @@ app.use ('*', (req, res) => {
   res.sendFile (path.join (__dirname, './client/build/index.html'));
 });
 
-//port
-const PORT = process.env.PORT || 3030;
 //rum listen
 app.listen (PORT, () => {
   console.log (`Server Running On ${PORT}`.bgGreen.black);

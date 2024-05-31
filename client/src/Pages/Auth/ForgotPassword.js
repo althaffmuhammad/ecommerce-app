@@ -13,14 +13,11 @@ const ForgotPassword = () => {
   const handleSubmit = async e => {
     e.preventDefault ();
     try {
-      const res = await axios.post (
-        'https://ecommerce-app-f61n.onrender.com/api/v1/auth/forgot-password',
-        {
-          email,
-          newPassword,
-          phone,
-        }
-      );
+      const res = await axios.post ('/api/v1/auth/forgot-password', {
+        email,
+        newPassword,
+        phone,
+      });
       if (res && res.data.success) {
         toast.success (res.data && res.data.message);
 

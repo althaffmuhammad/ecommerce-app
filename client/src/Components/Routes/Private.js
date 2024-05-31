@@ -11,7 +11,7 @@ export default function PrivateRoutes () {
 
   useEffect (() => {
     const authCheck = async()=>{
-        const res = await axios.get('https://ecommerce-app-f61n.onrender.com/api/v1/auth/user-auth',)
+        const res = await axios.get('/api/v1/auth/user-auth',)
         if (res.data.ok) {
             setOk(true)
         } else {

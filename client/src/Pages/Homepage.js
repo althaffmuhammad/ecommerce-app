@@ -19,7 +19,7 @@ const Homepage = () => {
   const getAllCategory = async () => {
     try {
       const {data} = await axios.get (
-        'https://ecommerce-app-f61n.onrender.com/api/v1/category/get-category'
+        '/api/v1/category/get-category'
       );
       if (data.success) {
         setCategories (data.category);
@@ -37,7 +37,7 @@ const Homepage = () => {
   const getAllProducts = async () => {
     try {
       const {data} = await axios.get (
-        'https://ecommerce-app-f61n.onrender.com/api/v1/product/get-product'
+        '/api/v1/product/get-product'
       );
       setProducts (data.products);
     } catch (error) {
@@ -70,7 +70,7 @@ const Homepage = () => {
  //get filterd product
  const filterProduct = async () => {
   try {
-    const { data } = await axios.post("https://ecommerce-app-f61n.onrender.com/api/v1/product/product-filters", {
+    const { data } = await axios.post("/api/v1/product/product-filters", {
       checked,
       radio,
     });
@@ -128,7 +128,7 @@ const Homepage = () => {
             {products?.map((p) => (
               <div className="card m-2" key={p._id}>
                 <img
-                  src={`https://ecommerce-app-f61n.onrender.com/api/v1/product/product-photo/${p._id}`}
+                  src={`/api/v1/product/product-photo/${p._id}`}
                   className="card-img-top"
                   alt={p.name}
                 />

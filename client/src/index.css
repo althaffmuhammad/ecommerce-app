@@ -7,6 +7,9 @@
   box-sizing: border-box;
   /* overflow: hidden; */
 }
+body::-webkit-scrollbar {
+  display: none;
+}
 /* -----header----- */
 .navbar {
   font-family: "Poppins", sans-serif;
@@ -95,7 +98,13 @@
 }
 
 @media (max-width: 900px) {
-  .srcinput button {
-    display: none;
+  .navbar-900px {
+    display: flex;
+    align-items: center;
+  }
+}
+@media (max-width: 1250px) {
+  .srcinput > form > input {
+    width: 200px;
   }
 }

@@ -42,7 +42,7 @@
   transform: scale(0.9);
 }
 
-. .card-img-top {
+.card-img-top {
   height: 300px !important;
 }
 /* ==================
